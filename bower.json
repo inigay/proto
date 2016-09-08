@@ -1,0 +1,19 @@
+{
+  "name": "consumerportal",
+  "description": "Consumer Application",
+  "main": "gulpfile.js",
+  "authors": [
+    "Igor Nigay"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MotoLease/ConsumerPOrtal",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "^4.6.1",
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "^0.2.18",
+    "ngstorage": "^0.3.10",
+    "angular-bootstrap": "^1.3.3"
+  }
+}

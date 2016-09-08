@@ -1,0 +1,39 @@
+<div class="info ">
+        <div class="container" >
+            <div class="row">
+                <h5 class="pull-left moto-heading-bold">
+                   
+                </h5>
+                <h5 class="pull-right moto-heading-bold appName">
+                   
+                </h5>
+            </div>
+            
+        </div>
+    </div>
+<div>
+    <div id="loginForm" class="panel panel-default">
+        <div  class="alert alert-danger" ng-show="core.loginErrorMessage">
+            {{core.loginErrorMessage}}
+        </div>
+        <div class="alert alert-danger" ng-show="login.message">
+            {{login.message}}
+        </div>
+        <div class="panel-heading"><i class="fa fa-sign-in"></i>Sign In</div>
+        <div class="panel-body" ng-class="login.spin ? 'spinner-parent' : ''">
+            <app-spinner name="loginSpin" height="138px" width="318px"></app-spinner>
+            
+            <form novalidate name="loginForm">
+                <div class="form-group">
+                    <label for="password">Enter Password:</label>
+                    <input class="form-control" ng-class="(loginForm.password.$invalid && !loginForm.$pristine) ? 'validation-error-input' : ''" id="password" name="password" type="password" ng-model="login.password" required>
+                    <p class="validation-error-message" ng-show="loginForm.password.$invalid && !loginForm.$pristine">Please Enter Your Password</p>
+                </div>
+                
+                <button class="btn btn-default" ng-click="login.authenticate()">Log In</button>
+            </form>
+        </div>
+        
+    </div>
+    
+</div>

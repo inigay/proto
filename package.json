@@ -1,0 +1,29 @@
+{
+  "name": "consumerportal",
+  "version": "1.0.0",
+  "description": "Consumer Application",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MotoLease/ConsumerPOrtal.git"
+  },
+  "author": "Igor Nigay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MotoLease/ConsumerPOrtal/issues"
+  },
+  "homepage": "https://github.com/MotoLease/ConsumerPOrtal#readme",
+  "devDependencies": {
+    "gulp": "3.9.*",
+    "gulp-inject": "^4.0.0",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "2.0.*",
+    "gulp-sass": "^2.3.1",
+    "jshint": "2.9.*",
+    "jshint-stylish": "^2.1.0",
+    "wiredep": "^4.0.0"
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<!-- bower:css -->
+	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<!-- endbower -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/src/styles/css/styles.css">
+	<!--endinject -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300,700">
+
+</head>
+<body ng-app='app.core' ng-controller='CoreController as core'>
+
+    <div class="container logoHeader">
+        <section class="branding pull-left">
+            <a href="">
+                <img id="logo" src="images/logo.jpg" alt="MotoLease LLC">
+            </a>
+            <div class="verticalLine"></div>
+            <p>MotoLease Consumer Portal</p>
+            
+        </section>
+        <section class="customerService pull-right">
+            <a href="#"><img src="images/liveSupport.png" alt="Live Support Online"></a>    
+        </section>                
+    </div>
+	
+	<div id='maincontent' ui-view ></div>
+
+	<footer class="info footer-bottom">
+        <div class="col-lg-3"  style="text-align:left; font-weight: 600;">
+            <span>Copyright 2016 MotoLease.net</span>
+        </div>
+        <div class="col-lg-6" style="text-align:center">
+            <a>Terms of Service</a>
+            <span style="padding:0 10px"></span>
+            <a>Privacy Policy</a>
+        </div>
+        <div class="col-lg-3" style="text-align:right; font-weight: 600;">
+            <span>Toll-Free Support: +1 (877) 234-6681</span>
+        </div>
+        
+    </footer>
+	
+
+<!-- bower:js -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/ngstorage/ngStorage.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- endbower -->
+
+<!-- inject:js -->
+<script src="/src/app/authentication/authentication.module.js"></script>
+<script src="/src/app/directives/appDirectives.module.js"></script>
+<script src="/src/app/core/core.module.js"></script>
+<script src="/src/app/home/home.module.js"></script>
+<script src="/src/app/information/information.module.js"></script>
+<script src="/src/app/verification/verification.module.js"></script>
+<script src="/src/app/core/core.config.js"></script>
+<script src="/src/app/authentication/login.controller.js"></script>
+<script src="/src/app/authentication/session.js"></script>
+<script src="/src/app/directives/spinner.directive.js"></script>
+<script src="/src/app/directives/spinnerService.js"></script>
+<script src="/src/app/core/core.controller.js"></script>
+<script src="/src/app/core/motoapi.js"></script>
+<script src="/src/app/core/run.js"></script>
+<script src="/src/app/core/webservice.js"></script>
+<script src="/src/app/home/home.controller.js"></script>
+<script src="/src/app/information/banking.controller.js"></script>
+<script src="/src/app/information/Banking.js"></script>
+<script src="/src/app/information/housing.controller.js"></script>
+<script src="/src/app/information/Housing.js"></script>
+<script src="/src/app/information/income.controller.js"></script>
+<script src="/src/app/information/Income.js"></script>
+<script src="/src/app/information/incomeModal.controller.js"></script>
+<script src="/src/app/information/personal.controller.js"></script>
+<script src="/src/app/information/Personal.js"></script>
+<script src="/src/app/information/reference.controller.js"></script>
+<script src="/src/app/information/Reference.js"></script>
+<script src="/src/app/verification/verification.controller.js"></script>
+<script src="/src/app/verification/Verification.js"></script>
+<!-- endinject -->
+
+</body>
+</html>

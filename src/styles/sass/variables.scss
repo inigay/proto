@@ -1,0 +1,14 @@
+$motoRed: #920001;
+
+$motoLightGrey: #EFEFEF;
+
+$motoDarkGrey: #E2E1E1;
+
+$motoGreen: green;
+
+$motoBlue: #23527c;
+
+@mixin motoBorder()
+{
+	border: 1px solid lightgrey;
+}

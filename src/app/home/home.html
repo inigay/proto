@@ -1,0 +1,177 @@
+
+<div class="info ">
+        <div class="container" >
+            <div class="row">
+                <h5 class="pull-left moto-heading-bold">
+                    Pending Application 12345
+                </h5>
+                <h5 class="pull-right moto-heading-bold appName">
+                    Welcome {{applicantName}} | <a class="logoutButton" ng-click="core.logout()">logout</a>
+                </h5>
+            </div>
+            
+        </div>
+    </div>
+<div class="container" id="mainContent" >
+    <h3>
+        Welcome to your MotoLease Customer Portal. Using this portal you can update your application information, 
+        view and submit documentation required to complete your application, and check your application status.
+    </h3>
+    <div class="row" >
+        <div>
+            <div class="panel panel-default col-lg-5 col-md-5" id="information">
+                <div class="moto-heading-main">
+                    <i class="fa fa-info-circle"></i>
+                    Information
+                </div>
+                
+                <app-spinner name="infoSpin" height="200px" width="100%"></app-spinner>
+
+                <div class="panel-body" ui-view >
+                    <ul class="list-inline moto-list-box">
+                        <li class="list-group-item" >
+                            <a ui-sref="personal">
+                                <i class="fa fa-user"></i> 
+                                <span>Personal</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item" >
+                            <span class="fa fa-check big-check"></span>
+                            <a ui-sref="housing">
+                                <i class="fa fa-home"></i>
+                                <span>Housing</span>
+                                
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a  ui-sref="income">
+                                <i class="fa fa-money"></i>
+                                <span>Income</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a  ui-sref="banking">
+                            <span class="fa fa-warning  big-warning"></span>
+                            <i class="fa fa-bank"></i> 
+                            <span>Banking</span>
+                            </a>
+                            
+                        </li>
+                        <li class="list-group-item">
+                            <a  ui-sref="reference">
+                            <i class="fa fa-users"></i> 
+                            <span>References</span>
+                            </a>
+                        </li>
+                        <!--<li class="list-group-item">
+                            <a  ui-sref="information.income">
+                            <i class="fa fa-motorcycle"></i>
+                            <span>Vehicle</span>
+                            </a>
+                        </li>-->
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            </div>   
+                    
+    <div class="col-lg-1 col-md-1"></div>  
+
+        <div>
+            <div class="panel panel-default col-lg-6  col-md-6" id="verificationChecklist">
+
+                <div class="moto-heading-main"><i class="fa fa-check-circle"></i>Verification Checklist <label id="refreshChecklist">Refresh List<i class="fa fa-refresh"></i></label></div>
+                    <div class="panel-body">
+
+                        <app-spinner name="verificationSpin" height="240px" width="544px"></app-spinner>
+                        <!-- directive -->
+
+                        <!--<div id="checklist" class="list-group" ng-controller="VerificationController as list">
+                            <uib-accordion close-others="false">
+                                <uib-accordion-group ng-repeat="item in list.verificationList" is-open="isOpen">
+                                    
+                                    <uib-accordion-heading class=" grey">
+                                        <i class="fa" ng-class="isOpen ? 'fa-angle-down' : 'fa-angle-right'" ></i>
+                                            {{item.label}}
+                                        <i ng-show="item.status != 0" class="fa" ng-class="item.status == 200 ? 'fa-check' : (item.status == 400 ? 'fa-warning' : '')"></i>
+                                    </uib-accordion-heading>
+                                    
+                                    <div class="verification-details">
+                                        <h4 ng-show="item.additionalInfo.source">{{item.additionalInfo.source}}</h4>
+                                        <p ng-repeat="message in item.additionalInfo.messages">{{message}}</p>
+                                        <p ng-show="item.type == 1" class="disclaimer">Please Note: Handwritten paystubs require a letter of 
+                                            employment AND three (3) most recent months' bank statements showing 
+                                            deposits AND copy of cancelled checks</p>
+                                    </div>
+                                    
+                                </uib-accordion-group>
+                            </uib-accordion>
+                        </div>-->
+
+                        <ul id="checklist" class="list-group" ng-controller="VerificationController as list">
+                            
+                            <div ng-repeat="item in list.verificationList" ng-init="expand==false">
+                                
+                                <li class="list-group-item grey" ng-click="expand = !expand">
+                                    <i class="fa" ng-class="expand ? 'fa-angle-down' : 'fa-angle-right'" ></i>
+                                    {{item.label}}
+                                    <i ng-show="item.status != 0" class="fa" ng-class="item.status == 200 ? 'fa-check' : (item.status == 400 ? 'fa-warning' : '')"></i>
+                                </li>
+                                
+                                <div class="transitionWrapper" ng-class="expand ? 'expand' : ''">
+                                    <div ng-show="item.additionalInfo" class="verification-details">
+                                        <h4 ng-show="item.additionalInfo.source">{{item.additionalInfo.source}}</h4>
+                                        <p ng-repeat="message in item.additionalInfo.messages">{{message}}</p>
+                                        <p ng-show="item.type == 1" class="disclaimer">Please Note: Handwritten paystubs require a letter of 
+                                            employment AND three (3) most recent months' bank statements showing 
+                                            deposits AND copy of cancelled checks</p>
+                                    </div>
+                                </div>
+                            </div>                           
+                        </ul>
+                        
+                        
+                        
+                        <div id="uploadFiles">
+                            <p>There are several ways that you can submit documentation for your 
+                                MotoLease Application:</p>
+                            <div class="ways">
+                                <i class="fa fa-cloud-upload"></i><span>Upload your documents to MotoLease</span>
+                                <div class="uploadArea">
+                                    <label for="fileUploadInput">
+                                         <div>
+                                            <i class="fa fa-upload"></i>
+                                            <span>Upload Files</span>
+                                        </div>
+                                    </label>
+                                    <input id="fileUploadInput" type="file">
+                                </div>
+                            </div>
+                            <div class="ways">
+                                
+                                <i class="fa fa-envelope"></i><span>Send your documents as attachments to</span>
+                                <div class="uploadArea">
+                                    <a href="mailto:12345@motolease.net">12345@motolease.net</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div>
+        <!-- FROM SESSION -->
+        
+        <div id="DealerPhone" class="panel panel-default col-lg-5 col-md-5">
+                <div class="moto-heading-main"><i class="fa fa-question-circle"></i>Questions</div>
+                <div class="phoneSection">
+                    <p>Contact your dealer 
+                        <strong class="red">Fun Bike Center San Diego</strong> at 
+                        <a href="#">858-278-6635</a>.</p>
+                </div>
+                
+            </div>
+        
+    </div>
+</div>

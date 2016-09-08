@@ -1,0 +1,56 @@
+
+<form role="form" novalidate ng-show="!house.spinner.isShown()">
+    <div class="form-group">
+        <label for="address">Current Address</label>
+        <input type="text" class="form-control" id="address" name="address" ng-model="house.info.address">
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" ng-model="house.info.city">
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-6">
+            <label for="licenseState">State</label>
+            <select class="form-control" name="state" id="state" ng-model="house.info.state" ng-options="key as value for (key , value) in home.states">
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <label for="zip">Zip</label>
+            <input type="text" class="form-control" id="zip" name="zip" ng-model="house.info.zip">
+        </div>
+        
+    </div>
+    
+    <div class="form-group">
+        <label for="addressSince">At This Address Since?</label>
+        <input type="text" class="form-control" id="addressSince" name="addressSince" ng-model="house.info.addressSince">
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-5">
+            <label for="ownershipType">Ownership Type</label>
+            <select class="form-control" name="ownershipType" id="ownershipType" ng-model="house.info.ownershipType" >
+                <option value="own">Own</option>
+                <option value="rent">Rent</option>
+                <option value="military">Military</option>
+                <option value="parents">Parents</option>
+                <option value="paid">Paid-off</option>
+            </select>
+        </div>
+
+        <div class="col-lg-7">
+            <label for="monthlyPayment">Monthly Rent of Mortgage</label>
+            <input type="text" class="form-control" id="monthlyPayment" name="monthlyPayment" ng-model="house.info.monthlyPayment">
+        </div>
+        
+    </div>
+   
+    <div class="pull-right" style="margin-left:30px;">
+        <button type="submit" class="btn btn-primary" ng-click="house.save()">save</button>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-warning" ui-sref="home">cancel</a>
+    </div>
+    
+    
+    
+</form>

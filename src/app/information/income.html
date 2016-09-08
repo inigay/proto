@@ -1,0 +1,111 @@
+
+<form role="form" novalidate ng-show="!income.spinner.isShown()" id="incomeForm">
+    <div ng-repeat="(key,incomeSource) in income.infoList" ng-init="expand = (key == 0)" class="incomeItem">
+        <div ng-click="expand = !expand" class="incomeHeader">
+            <i class="fa" ng-class="expand ? 'fa-angle-down' : 'fa-angle-right'" ></i>
+            {{incomeSource.employer || incomeSource.incomeType || 'Source Header'}}
+            <i class="fa fa-trash" ng-click="$event.stopPropagation(); income.confirmDelete(key)"></i>
+        </div>
+        <div ng-class="expand ? '' : 'expand' " class="transitionWrapper">
+            <div ng-if="incomeSource.getType() == 'current'"  class="incomeBox" >
+                <div class="form-group">
+                    <label for="incomeType">Income Type</label>
+                    <select class="form-control" name="incomeType" id="incomeType" ng-model="incomeSource.incomeType">
+                            <option value="current">Current Employment</option>
+                            <option value="retired">Retirement and Social Security</option>
+                            <option value="netRentalIncome">Net Rental Income</option>
+                            <option value="alimony">Alimony and Child Support</option>
+                            <option value="other">Other Income</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="employmentStatus">Employment Status</label>
+                    <select class="form-control" name="employmentStatus" id="employmentStatus" ng-model="incomeSource.employmentStatus">
+                            <option value="fullTime">Full Time</option>
+                            <option value="partTime">Part Time</option>
+                            <option value="selfEmployed">Owner/Self Employed</option>
+                            <option value="military">Military</option>
+                        </select>
+                </div>
+               
+                
+                <div class="form-group">
+                    <label for="employer">Employer</label>
+                    <input type="text" class="form-control" id="employer" name="employer" ng-model="incomeSource.employer">
+                </div>
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <input type="text" class="form-control" id="position" name="position" ng-model="incomeSource.position">
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-5">
+                        <label for="dateOfHire">Date Of Hire</label>
+                        <input type="text" class="form-control" id="dateOfHire" name="dateOfHire" ng-model="incomeSource.dateOfHire">
+                    </div>
+
+                    <div class="col-lg-7">
+                        <label for="employerPhone">Employer Phone</label>
+                        <input type="text" class="form-control" id="employerPhone" name="employerPhone" ng-model="incomeSource.employerPhone">
+                    </div>
+                    
+                </div>
+               
+                <div class="form-group">
+                    <label for="monthlyPay">Total Monthly (Pre-Tax)</label>
+                    <input type="text" class="form-control" id="monthlyPay" name="monthlyPay" ng-model="incomeSource.monthlyPay">
+                </div>
+        
+                
+            </div>
+
+        
+
+            <div ng-if="incomeSource.getType() != 'current'" class="incomeBox">
+                <div class="form-group">
+                    <label for="incomeType">Income Type</label>
+                    <select class="form-control" name="incomeType" id="incomeType" ng-model="incomeSource.incomeType">
+                            <option value="current">Current Employment</option>
+                            <option value="retired">Retirement and Social Security</option>
+                            <option value="netRentalIncome">Net Rental Income</option>
+                            <option value="alimony">Alimony and Child Support</option>
+                            <option value="other">Other Income</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" ng-model="incomeSource.description">
+                </div>
+                <div class="form-group">
+                    <label for="monthlyPay">Total Monthly (Pre-Tax)</label>
+                    <input type="text" class="form-control" id="monthlyPay" name="monthlyPay" ng-model="incomeSource.monthlyPay">
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="form-group" id="addIncomeSource" ng-click="income.addIncomeSource()">
+        <div>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+    </div>
+   
+    <div style="margin-top:15px;">
+        
+        
+        <div class="pull-right" style="margin-left:30px;">
+            <button type="submit" class="btn btn-primary" ng-click="income.save()">save</button>
+        </div>
+
+        <div class="pull-right" >
+            <a class="btn btn-warning" ui-sref="home">cancel</a>
+        </div>
+
+    </div>
+    
+    
+    
+</form>

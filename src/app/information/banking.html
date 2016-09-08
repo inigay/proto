@@ -1,0 +1,51 @@
+
+<form role="form" novalidate ng-show="!banking.spinner.isShown()">
+    <div class="form-group">
+        <label for="accountType">Account Type</label>
+         <select class="form-control" name="accountType" id="accountType" ng-model="banking.info.accountType">
+                <option value="checking">Checking</option>
+                <option value="savings">Savings</option>
+            </select>
+    </div>
+    <div class="form-group">
+        <label for="routingNumber">ACH Routing Number</label>
+        <input type="text" class="form-control" id="routingNumber" name="routingNumber" ng-model="banking.info.routingNumber">
+    </div>
+    <div class="form-group">
+        <label for="accountNumber">ACH Account Number</label>
+        <input type="text" class="form-control" id="accountNumber" name="accountNumber" ng-model="banking.info.accountNumber">
+    </div>
+    <div class="form-group">
+        <label for="institution">Financial Institution</label>
+        <input type="text" class="form-control" id="institution" name="institution" ng-model="banking.info.institution">
+    </div>
+     <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" ng-model="banking.info.city">
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-6">
+            <label for="licenseState">State</label>
+            <select class="form-control" name="state" id="state" ng-model="banking.info.state" ng-options="key as value for (key , value) in home.states">
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <label for="name">Name on Account</label>
+            <input type="text" class="form-control" id="name" name="name" ng-model="banking.info.name">
+        </div>
+        
+    </div>
+    
+   
+   
+     
+    
+    <div class="pull-right" style="margin-left:30px;">
+        <button type="submit" class="btn btn-primary" ng-click="banking.save()">save</button>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-warning" ui-sref="home">cancel</a>
+    </div>
+    
+    
+</form>

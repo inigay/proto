@@ -1,0 +1,118 @@
+
+
+<form role="form" novalidate ng-show="!person.spinner.isShown()">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <select class="form-control" name="title" id="title" ng-model="person.info.title" >
+            <option value="">Select Title</option>
+            <option value="mr">Mr.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="msmr">Ms.</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" disabled ng-model="person.info.firstName">
+    </div>
+     <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" disabled ng-model="person.info.lastName">
+    </div>
+    <div class="form-group row">
+        <div class="mi-form-group col-lg-4">
+            <label for="mi">Middle Initial</label>
+            <input type="text" class="form-control" id="mi" name="mi" ng-model="person.info.mi">
+        </div>
+        
+        <div class="ssn-form-group col-lg-8">
+             <label for="SSN">SSN/Taxpayer ID</label>
+            <input type="text" class="form-control" id="SSN" name="SSN" disabled ng-model="person.info.ssn">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="text" class="form-control" id="dob" placeholder="mm/dd/yyyy" ng-model="person.info.dob">
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-5">
+            <label for="licenseState">Driver's License State</label>
+            <select 
+                class="form-control" 
+                name="licenseState" 
+                id="licenseState" 
+                ng-model="person.info.licenseState" 
+                ng-options="key as value for (key , value) in home.states"
+            >
+               
+            </select>
+        </div>
+        <div class="col-lg-7">
+            <label for="licenseId">Driver's License Number</label>
+            <input type="text" class="form-control" id="licenseId" name="licenseId" ng-model="person.info.licenseId">
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <label for="citizenStatus">Applicant Citizenship Status</label>
+        <div>
+            <input type="radio" class="optradio" id="citizenStatus" name="citizenStatus" value="true" ng-model="person.info.citizenStatus">
+            <span>US Citizen</span>  
+            <input type="radio" class="optradio" id="citizenStatus" name="citizenStatus">
+            <span>Permanent Resident</span>  
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="alienId">Alien ID:</label> <input type="text" class="form-control" id="alienId" name="alienId"  ng-model="person.info.alienId">
+    </div>
+    
+    <div class="form-group row">
+        <div class="col-lg-8">
+            <label for="tel">Telephone</label>
+            <input type="text" class="form-control" id="tel" ng-model="person.info.phones[0].value">
+        </div>
+
+        <div class="col-lg-4">
+            <label for="telType">Type</label>
+            <select name="telType" id="telType" class="form-control" ng-model="person.info.phones[0].type">
+                <option value="">Select</option>
+                <option value="home">Home</option>
+                <option value="cell">Cell</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+    </div>
+    
+    
+    <div class="form-group row">
+        <div class="col-lg-8">
+            <label for="tel">Alt Telephone</label>
+            <input type="text" class="form-control" id="tel" ng-model="person.info.phones[1].value">
+        </div>
+
+        <div class="col-lg-4">
+            <label for="telType">Type</label>
+            <select name="telType" id="telType" class="form-control" ng-model="person.info.phones[1].type">
+                <option value="">Select</option>
+                <option value="cell">Cell</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" ng-model="person.info.email">
+    </div>
+
+   
+    
+    <div class="pull-right" style="margin-left:30px;">
+        <button type="submit" class="btn btn-primary" ng-click="person.save()">save</button>
+    </div>
+     <div class="pull-right">
+        <a class="btn btn-warning" ui-sref="home">cancel</a>
+    </div>
+    
+</form>

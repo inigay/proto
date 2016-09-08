@@ -1,0 +1,90 @@
+
+<form role="form" novalidate ng-show="!reference.spinner.isShown()">
+    <h3>Reference One</h3>
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="fullName" name="fullName" ng-model="reference.info[0].fullName">
+    </div>
+    <div class="form-group">
+        <label for="relationship">Relationship to Applicant</label>
+        <input type="text" class="form-control" id="relationship" name="relationship" ng-model="reference.info[0].relationship">
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" name="address" ng-model="reference.info[0].address">
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" ng-model="reference.info[0].city">
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-6">
+            <label for="licenseState">State</label>
+            <select class="form-control" name="state" id="state" ng-model="reference.info[0].state" ng-options="key as value for (key , value) in home.states">
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <label for="zip">Zip</label>
+            <input type="text" class="form-control" id="zip" name="zip" ng-model="reference.info[0].zip">
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" ng-model="reference.info[0].email">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" ng-model="reference.info[0].phone">
+    </div>
+    
+    <h3>Reference Two</h3>
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="fullName" name="fullName" ng-model="reference.info[1].fullName">
+    </div>
+    <div class="form-group">
+        <label for="relationship">Relationship to Applicant</label>
+        <input type="text" class="form-control" id="relationship" name="relationship" ng-model="reference.info[1].relationship">
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" name="address" ng-model="reference.info[1].address">
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" ng-model="reference.info[1].city">
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-6">
+            <label for="licenseState">State</label>
+            <select class="form-control" name="state" id="state" ng-model="reference.info[1].state" ng-options="key as value for (key , value) in home.states">
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <label for="zip">Zip</label>
+            <input type="text" class="form-control" id="zip" name="zip" ng-model="reference.info[1].zip">
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" ng-model="reference.info[1].email">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" ng-model="reference.info[1].phone">
+    </div>
+   
+   
+     
+    
+    <div class="pull-right" style="margin-left:30px;">
+        <button type="submit" class="btn btn-primary" ng-click="reference.save()">save</button>
+    </div>
+    <div class="pull-right" >
+        <a class="btn btn-warning" ui-sref="home">cancel</a>
+    </div>
+    
+    
+</form>
